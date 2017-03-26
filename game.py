@@ -49,7 +49,8 @@ class Game(object):
             self.featureToGuess = getRandomFeature(self.layer, self.featureIdsGuessed)
             self.pointToGuess = self.transformWGStoMap.transform(self.featureToGuess.geometry().asPoint())
 
-            self.dockwidget.nameLabel.setText(unicode(self.featureToGuess.attribute("name")))
+            name = self.featureToGuess.attribute("name") or ""
+            self.dockwidget.nameLabel.setText(unicode(name))
 
             self.dockwidget.webView.setHtml("")
             self.dockwidget.hintLabel.setText("")
