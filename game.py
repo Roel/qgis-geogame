@@ -32,6 +32,7 @@ class Game(object):
 
         self.featureIdsGuessed = []
         self.featureToGuess = None
+        self.pointToGuess = None
         self.score = 0
 
         self.mapToolPan = QgsMapToolPan(self.iface.mapCanvas())
@@ -61,10 +62,8 @@ class Game(object):
         self.layer = self.iface.activeLayer()
         
         if self.layer:
-            self.score = 0
             self.rounds = 4
-
-            self.dockwidget.scorePanel.display(self.score)
+            self.resetScore()
 
             self.iface.mapCanvas().setMapTool(self.mapToolPoint)
             self.iface.mapCanvas().xyCoordinates.connect(self.hint)
@@ -91,6 +90,10 @@ class Game(object):
         self.dockwidget.hintLabel.setText("")
         self.dockwidget.webView.setHtml("")
         self.mapToolPoint.canvasClicked.disconnect()
+
+    def resetScore(self):
+        self.score = 0
+        self.dockwidget.scorePanel.display(self.score)
 
     def guess(self, point):
         if self.pointToGuess:

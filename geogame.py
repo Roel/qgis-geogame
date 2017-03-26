@@ -73,6 +73,7 @@ class GeoGame:
 
         self.pluginIsActive = False
         self.dockwidget = None
+        self.game = None
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -189,6 +190,10 @@ class GeoGame:
         # Commented next statement since it causes QGIS crashe
         # when closing the docked window:
         # self.dockwidget = None
+
+        if self.game:
+            self.game.resetScore()
+            self.game.stop()
 
         self.pluginIsActive = False
 
