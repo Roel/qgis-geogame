@@ -50,6 +50,7 @@ class Game(object):
         
         if self.layer:
             self.rounds = 4
+            self.featureIdsGuessed = []
             self.resetScore()
 
             self.iface.mapCanvas().setMapTool(self.mapToolPoint)
