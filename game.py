@@ -47,15 +47,19 @@ class Game(object):
             self.rounds -= 1
 
             self.featureToGuess = getRandomFeature(self.layer, self.featureIdsGuessed)
-            self.pointToGuess = self.transformWGStoMap.transform(self.featureToGuess.geometry().asPoint())
 
-            name = self.featureToGuess.attribute("name") or ""
-            self.dockwidget.nameLabel.setText(unicode(name))
+            if self.featureToGuess:
+                self.pointToGuess = self.transformWGStoMap.transform(self.featureToGuess.geometry().asPoint())
 
-            self.dockwidget.webView.setHtml("")
-            self.dockwidget.hintLabel.setText("")
-            wikiLang, wikiPage = self.featureToGuess.attribute("wikipedia").split(':')
-            self.dockwidget.webView.setUrl(QUrl('http://' + wikiLang + '.m.wikipedia.org/wiki/' + wikiPage))
+                name = self.featureToGuess.attribute("name") or ""
+                self.dockwidget.nameLabel.setText(unicode(name))
+
+                self.dockwidget.webView.setHtml("")
+                self.dockwidget.hintLabel.setText("")
+                wikiLang, wikiPage = self.featureToGuess.attribute("wikipedia").split(':')
+                self.dockwidget.webView.setUrl(QUrl('http://' + wikiLang + '.m.wikipedia.org/wiki/' + wikiPage))
+            else:
+                self.stop()
         else:
             self.stop()
 
