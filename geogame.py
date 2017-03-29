@@ -228,9 +228,10 @@ class GeoGame:
                 # Create the dockwidget (after translation) and keep reference
                 self.dockwidget = GeoGameDockWidget()
 
-            self.game = Game(self.iface, self.dockwidget)
-            self.dockwidget.startButton.clicked.connect(self.game.start)
-            self.dockwidget.stopButton.clicked.connect(self.game.stop)
+            if self.game == None:
+                self.game = Game(self.iface, self.dockwidget)
+                self.dockwidget.startButton.clicked.connect(self.game.start)
+                self.dockwidget.stopButton.clicked.connect(self.game.stop)
 
             # connect to provide cleanup on closing of dockwidget
             self.dockwidget.closingPlugin.connect(self.onClosePlugin)
