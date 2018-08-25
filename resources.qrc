@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/plugins/geogame" >
+    <qresource prefix="/plugins/GeoGame" >
         <file>icon.png</file>
     </qresource>
 </RCC>
