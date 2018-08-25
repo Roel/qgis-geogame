@@ -1,10 +1,10 @@
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 from qgis.core import *
 from qgis.gui import *
 
-from utils import getRandomFeature
+from .utils import getRandomFeature
 
 class Game(object):
     def __init__(self, iface, dockwidget):
@@ -21,8 +21,9 @@ class Game(object):
         self.mapToolPoint = QgsMapToolEmitPoint(self.iface.mapCanvas())
 
         self.transformWGStoMap = QgsCoordinateTransform(
-            QgsCoordinateReferenceSystem(4326, QgsCoordinateReferenceSystem.EpsgCrsId),
-            self.iface.mapCanvas().mapRenderer().destinationCrs())
+            QgsCoordinateReferenceSystem("EPSG:4326"),
+            self.iface.mapCanvas().mapSettings().destinationCrs(),
+            QgsProject.instance())
 
     def setNextFeature(self):
         if self.rounds > 0:

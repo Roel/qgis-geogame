@@ -5,9 +5,9 @@
                                  A QGIS plugin
  Wikipedia challenge in QGis
                               -------------------
-        begin                : 2017-03-26
+        begin                : 2018-08-23
         git sha              : $Format:%H$
-        copyright            : (C) 2017 by Roel
+        copyright            : (C) 2018 by Roel
         email                : roel@huybrechts.re
  ***************************************************************************/
 
@@ -20,16 +20,17 @@
  *                                                                         *
  ***************************************************************************/
 """
-from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt
-from PyQt4.QtGui import QAction, QIcon
+from PyQt5.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt, QUrl
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QAction
 # Initialize Qt resources from file resources.py
-import resources
+from .resources import *
 
 # Import the code for the DockWidget
-from geogame_dockwidget import GeoGameDockWidget
+from .geogame_dockwidget import GeoGameDockWidget
 import os.path
 
-from game import Game
+from .game import Game
 
 class GeoGame:
     """QGIS Plugin Implementation."""

@@ -5,9 +5,9 @@
                                  A QGIS plugin
  Wikipedia challenge in QGis
                              -------------------
-        begin                : 2017-03-26
+        begin                : 2018-08-23
         git sha              : $Format:%H$
-        copyright            : (C) 2017 by Roel
+        copyright            : (C) 2018 by Roel
         email                : roel@huybrechts.re
  ***************************************************************************/
 
@@ -23,14 +23,14 @@
 
 import os
 
-from PyQt4 import QtGui, uic
-from PyQt4.QtCore import pyqtSignal
+from PyQt5 import QtGui, QtWidgets, uic
+from PyQt5.QtCore import pyqtSignal
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'geogame_dockwidget_base.ui'))
 
 
-class GeoGameDockWidget(QtGui.QDockWidget, FORM_CLASS):
+class GeoGameDockWidget(QtWidgets.QDockWidget, FORM_CLASS):
 
     closingPlugin = pyqtSignal()
 
