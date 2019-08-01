@@ -8,8 +8,8 @@
 
 [general]
 name=OSGeo.be GeoGame
-qgisMinimumVersion=2.0
 description=Wikipedia challenge in QGis
+qgisMinimumVersion=3.0
 version=0.1
 author=Roel
 email=roel@huybrechts.re
@@ -26,7 +26,7 @@ repository=None
 # changelog=
 
 # Tags are comma separated with spaces allowed
-tags=
+tags=python
 
 homepage=
 category=Plugins

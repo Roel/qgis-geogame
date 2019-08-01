@@ -1,17 +1,17 @@
 Plugin Builder Results
 
 Your plugin GeoGame was created in:
-    /home/roel/.qgis2/GeoGame
+    C:/Users/rhbav33/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins\geogame
 
 Your QGIS plugin directory is located at:
-    /home/roel/.qgis2/python/plugins
+    C:/Users/rhbav33/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins
 
 What's Next:
 
   * Copy the entire directory containing your new plugin to the QGIS plugin
     directory
 
-  * Compile the resources file using pyrcc4
+  * Compile the resources file using pyrcc5
 
   * Run the tests (``make test``)
 
@@ -29,5 +29,4 @@ What's Next:
 For more information, see the PyQGIS Developer Cookbook at:
 http://www.qgis.org/pyqgis-cookbook/index.html
 
-(C) 2011-2014 GeoApt LLC - geoapt.com
-Git revision : $Format:%H$
+(C) 2011-2018 GeoApt LLC - geoapt.com

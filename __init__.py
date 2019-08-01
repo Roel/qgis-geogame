@@ -5,8 +5,8 @@
                                  A QGIS plugin
  Wikipedia challenge in QGis
                              -------------------
-        begin                : 2017-03-26
-        copyright            : (C) 2017 by Roel
+        begin                : 2018-08-23
+        copyright            : (C) 2018 by Roel
         email                : roel@huybrechts.re
         git sha              : $Format:%H$
  ***************************************************************************/
